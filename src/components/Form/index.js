@@ -3,6 +3,14 @@ import styled from "styled-components";
 import Switch from "./Switch";
 import TextField from "./TextField";
 
+export const Page = styled.main `
+  padding-top: 1rem;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
 export const FormWrapper = styled.form`
   padding: 2rem;
   border: 1px solid #ccc;
@@ -10,6 +18,7 @@ export const FormWrapper = styled.form`
   align-items: center;
   justify-content: center;
   width: 100%;
+  max-width: 400px;
   border-radius: 1rem;
 `;
 

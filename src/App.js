@@ -1,13 +1,13 @@
 import React from "react";
-import Form from "./components/Form";
+import Form, { Page } from "./components/Form";
 import GlobalStyle from "./globalStyles";
 
 function App() {
   return (
-    <>
+    <Page>
       <GlobalStyle/>
       <Form/>
-    </>
+    </Page>
   );
 }
 

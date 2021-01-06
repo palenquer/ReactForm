@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
         font-size: 100%;
         font-family: Montserrat;
         vertical-align: baseline;
-        box-sizing: none;
+        box-sizing: border-box;
     }
     article, aside, details, figcaption, figure, 
     footer, header, hgroup, menu, nav, section {
@@ -34,9 +34,6 @@ const GlobalStyle = createGlobalStyle`
     body {
         width: 100vw;
         height: 100vh;
-        display:flex;
-        align-items: center;
-        justify-content: center;
         line-height: 1;
     }
     ol, ul {
