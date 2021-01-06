@@ -1,4 +1,4 @@
-<h1>DEMO:react-form.palenquer.vercel.app</h1>
+<h1>DEMO:</h1>react-form.palenquer.vercel.app
 
 Projeto com o intúito de aprimorar meus conhecimentos de formulários de cadastro usando React e Styled Components.
 
