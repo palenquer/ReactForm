@@ -4,7 +4,6 @@ import Switch from "./Switch";
 import TextField from "./TextField";
 
 export const Page = styled.main `
-  padding-top: 1rem;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -12,6 +11,7 @@ export const Page = styled.main `
   justify-content: center;
 `
 export const FormWrapper = styled.form`
+  margin: 2rem;
   padding: 2rem;
   border: 1px solid #ccc;
   display: flex;
