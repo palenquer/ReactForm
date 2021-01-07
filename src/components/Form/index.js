@@ -3,13 +3,13 @@ import styled from "styled-components";
 import Switch from "./Switch";
 import TextField from "./TextField";
 
-export const Page = styled.main `
+export const Page = styled.main`
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-`
+`;
 export const FormWrapper = styled.form`
   margin: 2rem;
   padding: 2rem;
@@ -21,7 +21,6 @@ export const FormWrapper = styled.form`
   max-width: 400px;
   border-radius: 1rem;
 `;
-
 export const Fieldset = styled.fieldset`
   width: 100%;
   display: flex;
@@ -63,19 +62,19 @@ function Form() {
   const [name, setName] = useState("");
   const [lastname, setLastName] = useState("");
   const [cpf, setCpf] = useState("");
-  const [promotion, setPromotion] = useState(false);
+  const [sale, setSale] = useState(false);
 
   function ResetForm() {
     setName("");
     setLastName("");
     setCpf("");
-    setPromotion(false);
+    setSale(false);
   }
   return (
     <FormWrapper
       onSubmit={(event) => {
         event.preventDefault();
-        console.log({ name, lastname, cpf, promotion });
+        console.log({ name, lastname, cpf, sale });
         ResetForm();
       }}
     >
@@ -125,13 +124,13 @@ function Form() {
           }}
         />
         <Switch
-          htmlFor="promotion"
-          name="Promotion"
-          id="promotion"
+          htmlFor="sale"
+          name="Sales"
+          id="sale"
           type="checkbox"
-          checked={promotion}
+          checked={sale}
           onChange={(event) => {
-            setPromotion(event.target.checked);
+            setSale(event.target.checked);
           }}
         />
         <Button type="submit">Send</Button>
