@@ -1,6 +1,6 @@
 <h1>DEMO: (https://react-form.palenquer.vercel.app) </h1>
 
-Projeto com o intúito de aprimorar meus conhecimentos de formulários de cadastro usando React e Styled Components.
+Projeto com o intuito de aprimorar meus conhecimentos de formulários de cadastro usando React e Styled Components.
 
 # Getting Started with Create React App
 
