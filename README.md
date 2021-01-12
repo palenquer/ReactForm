@@ -1,5 +1,9 @@
 <h1>DEMO: (https://react-form.palenquer.vercel.app) </h1>
 
+<h3>Como utilizar o projeto</h3>
+
+  Faça um gitclone no repositório ReactForm-Server, faça a aplicação Node, digite "yarn dev" no terminal e logo após abra a demo e preencha o formulário.
+
 <h1> Projeto ReactForm </h1>
 
   Projeto com o intuito de aprimorar meus conhecimentos de formulários de cadastro usando React, Styled Components e Axios.
