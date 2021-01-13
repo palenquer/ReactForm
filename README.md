@@ -2,7 +2,7 @@
 
 <h3>Como utilizar o projeto</h3>
 
-  Faça um gitclone no repositório ReactForm-Server, faça a aplicação Node, digite "yarn dev" no terminal e logo após abra a demo, preencha o formulário e olhe no console do navegador os dados preenchidos.
+  Faça um gitclone no repositório ReactForm-Server, faça a aplicação Node, abra o arquivo env.example e verifique a key, crie o arquivo .env com a key informada e as informações, digite "yarn dev" no terminal e logo após abra a demo, preencha o formulário e olhe no console do navegador ou no DB os dados preenchidos.
 
 <h1> Projeto ReactForm </h1>
 
