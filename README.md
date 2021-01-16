@@ -18,9 +18,15 @@
   
 <h2>Axios</h2>
 
-  Com o Axios consegui fazer a interação direta entre o Frontend e o Backend, adquirindo mais conhecimentos sobre como se comunica o Backend e Frontend
+  Com o Axios consegui fazer a interação direta entre o Frontend e o Backend, adquirindo mais conhecimentos sobre como se comunica o Backend e Frontend.
 
+<h2>Formik</h2>
 
+  Utilizando o Formik, melhorei meu conhecimento sobre Form.
+  
+<h2>Yup</h2>
+
+  Com o Yup fiz uma validação de cadastro a qual o usuário poderá ter uma interação melhor.
 
 # Getting Started with Create React App
 
