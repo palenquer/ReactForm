@@ -1,6 +1,26 @@
 <h1>DEMO: (https://react-form.palenquer.vercel.app) </h1>
 
-Projeto com o intuito de aprimorar meus conhecimentos de formulários de cadastro usando React e Styled Components.
+<h3>Como utilizar o projeto</h3>
+
+  Faça um gitclone no repositório ReactForm-Server, faça a aplicação Node, abra o arquivo env.example e verifique a key, crie o arquivo .env com a key informada e as informações, digite "yarn dev" no terminal e logo após abra a demo, preencha o formulário e olhe no console do navegador ou no DB os dados preenchidos.
+
+<h1> Projeto ReactForm </h1>
+
+  Projeto com o intuito de aprimorar meus conhecimentos de formulários de cadastro usando React, Styled Components e Axios.
+
+<h2>React</h2>
+
+  Expandi mais ainda meu conhecimento com o react e consegui fazer um formulário a qual recebe e envia os seus dados.
+  
+<h2>Styled Components</h2>
+
+  Aprendi a utilizar os Styled Components e assim organizei melhor meus projetos.
+  
+<h2>Axios</h2>
+
+  Com o Axios consegui fazer a interação direta entre o Frontend e o Backend, adquirindo mais conhecimentos sobre como se comunica o Backend e Frontend
+
+
 
 # Getting Started with Create React App
 
