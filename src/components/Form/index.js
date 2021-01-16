@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
+import { Formik, Form, ErrorMessage } from "formik";
 import Switch from "./Switch";
 import TextField from "./TextField";
-const axios = require('axios');
+import schema from "./schema";
+const axios = require("axios");
 
 export const Page = styled.main`
   width: 100vw;
@@ -11,7 +13,7 @@ export const Page = styled.main`
   align-items: center;
   justify-content: center;
 `;
-export const FormWrapper = styled.form`
+export const FormWrapper = styled(Form)`
   margin: 2rem;
   padding: 2rem;
   border: 1px solid #ccc;
@@ -38,6 +40,11 @@ export const Legend = styled.legend`
   text-align: center;
   color: #622569;
 `;
+export const Error = styled(ErrorMessage)`
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  color: red;
+`;
 export const Button = styled.button`
   font-size: 1.6rem;
   align-self: flex-end;
@@ -57,97 +64,87 @@ export const Button = styled.button`
   &:active {
     transform: translateX(3px);
   }
+  &:disabled {
+    cursor: pointer;
+    background-color: rgb(163, 168, 173);
+    box-shadow: none;
+    color: rgb(255, 255, 255) !important;
+
+    &:hover,
+    &:focus {
+      cursor: not-allowed;
+    }
+  }
 `;
 
-function Form() {
-  const [name, setName] = useState("");
-  const [lastname, setLastName] = useState("");
-  const [cpf, setCpf] = useState("");
-  const [sale, setSale] = useState(false);
-
-  function ResetForm() {
-    setName("");
-    setLastName("");
-    setCpf("");
-    setSale(false);
+function Forms() {
+  function onSubmit(values, actions) {
+    console.log("submit", values);
+    axios
+      .post("http://localhost:3333/users", {
+        name: values.name,
+        lastname: values.lastname,
+        cpf: values.cpf,
+        sales: values.sales,
+      })
+      .then(function (response) {
+        console.log(response);
+        actions.resetForm();
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
-  return (
-    <FormWrapper
-      onSubmit={(event) => {
-        event.preventDefault();
-        console.log({ name, lastname, cpf, sale });
-        axios.post('http://localhost:3333/users', {
-          name, lastname, cpf, sale
-        })
-        .then(function(response) {
-          console.log(response);
-          ResetForm();
-        })
-        .catch(function(error) {
-          console.log(error);
-        });
 
+  return (
+    <Formik
+      validationSchema={schema}
+      onSubmit={onSubmit}
+      ValidateOnForm
+      initialValues={{
+        name: "",
+        lastname: "",
+        cpf: "",
+        sales: false,
       }}
     >
-      <Fieldset>
-        <Legend>React Form</Legend>
-        <TextField
-          htmlFor="name"
-          value={name}
-          name="Name"
-          id="name"
-          type="text"
-          onChange={(event) => {
-            let getName = event.target.value;
-            if (getName.length >= 9) {
-              getName = getName.substr(0, 12);
-            }
-            setName(getName);
-          }}
-        />
-        <TextField
-          htmlFor="lastname"
-          value={lastname}
-          name="Last Name"
-          id="lastname"
-          type="text"
-          onChange={(event) => {
-            let getLastName = event.target.value;
-            if (getLastName.length >= 9) {
-              getLastName = getLastName.substr(0, 12);
-            }
-            setLastName(getLastName);
-          }}
-        />
-        <TextField
-          htmlFor="cpf"
-          value={cpf}
-          name="CPF"
-          id="cpf"
-          type="number"
-          onChange={(event) => {
-            setCpf(event.target.value);
-            let getCpf = event.target.value;
-            if (getCpf.length >= 11) {
-              getCpf = getCpf.substr(0, 11);
-            }
-            setCpf(getCpf);
-          }}
-        />
-        <Switch
-          htmlFor="sale"
-          name="Sales"
-          id="sale"
-          type="checkbox"
-          checked={sale}
-          onChange={(event) => {
-            setSale(event.target.checked);
-          }}
-        />
-        <Button type="submit">Send</Button>
-      </Fieldset>
-    </FormWrapper>
+      {({ values, errors, touched, isValid, isSubmitting }) => (
+        <FormWrapper>
+          <Fieldset>
+            <Legend>React Form</Legend>
+            <TextField
+              name="name"
+              type="text"
+              label="Name"
+              border={errors.name && "1px solid red"}
+              placeholder="Your name..."
+            />
+            <Error component="p" name="name" />
+            <TextField
+              name="lastname"
+              type="text"
+              label="LastName"
+              border={errors.lastname && "1px solid red"}
+              placeholder="Your lastname..."
+            />
+            <Error component="p" name="lastname" />
+            <TextField
+              name="cpf"
+              type="number"
+              label="CPF"
+              border={errors.cpf && "1px solid red"}
+              placeholder="00000000000"
+            />
+            <Error component="p" name="cpf" />
+            <Switch name="sales" type="checkbox" />
+            <Button type="submit" disabled={!isValid || isSubmitting}>
+              Submit
+            </Button>
+          </Fieldset>
+        </FormWrapper>
+      )}
+    </Formik>
   );
 }
 
-export default Form;
+export default Forms;

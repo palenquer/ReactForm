@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { Field } from "formik";
 
-export const Input = styled.input `
+export const Input = styled(Field) `
   margin-right: 0.5rem;
   border-radius: 1rem;
   padding: 1rem;
@@ -19,11 +20,11 @@ export const Container = styled.p `
   width: 100%;
 `;
 
-function Switch({id, type, onChange, checked, defaultChecked, htmlFor, name}) {
+function Switch({type, name}) {
   return (
     <Container>
-      <Input id={id} type={type} onChange={onChange} checked={checked} defaultChecked={defaultChecked}/>
-      <Label htmlFor={htmlFor}>{name}</Label>
+      <Input name={name} type={type}/>
+      <Label>Sales</Label>
     </Container>
   );
 }

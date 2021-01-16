@@ -1,12 +1,12 @@
 import React from "react";
-import Form, { Page } from "./components/Form";
+import Forms, { Page } from "./components/Form";
 import GlobalStyle from "./globalStyles";
 
 function App() {
   return (
     <Page>
       <GlobalStyle/>
-      <Form/>
+      <Forms/>
     </Page>
   );
 }

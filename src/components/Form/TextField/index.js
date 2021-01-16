@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import { Field } from "formik";
 
-export const Input = styled.input`
+export const Input = styled(Field)`
   border: 1px solid #ccc;
   border-radius: 1rem;
   padding: 1rem;
+  border: ${props => props.border || '1px solid #ccc'};
   ::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
@@ -29,11 +31,11 @@ export const Container = styled.p`
   width: 100%;
 `;
 
-function TextField({ id, name, type, htmlFor, onChange, value }) {
+function TextField({name, type, label, border, placeholder}) {
   return (
     <Container>
-      <Label htmlFor={htmlFor}>{name}</Label>
-      <Input id={id} type={type} onChange={onChange} value={value} />
+      <Label>{label}</Label>
+      <Input type={type} name={name} border={border} placeholder={placeholder}/>
     </Container>
   );
 }
